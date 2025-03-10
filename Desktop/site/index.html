@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>인트로</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: url('bg2.png') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .logo {
+            width: 300px;
+            opacity: 0;
+            transition: opacity 2s ease-in-out;
+            cursor: pointer;
+        }
+
+        .show {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <img src="logo.png" alt="로고" class="logo" id="logo">
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const logo = document.getElementById("logo");
+            logo.classList.add("show");
+
+            logo.addEventListener("click", function() {
+                window.location.href = "main.html";
+            });
+        });
+    </script>
+</body>
+</html>
