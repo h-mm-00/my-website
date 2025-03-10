@@ -52,6 +52,11 @@
 
         .content-list {
             margin-top: 30px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap:10px;
+            justify-content: center;
+            width: 60%;
         }
 
         .content-list button {
@@ -63,6 +68,7 @@
             font-size: 1.2rem;
             cursor: pointer;
             transition: background 0.3s;
+            height: 50px;
         }
 
         .content-list button:hover {
