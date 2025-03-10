@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>세잎클로버</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: url('bg2.png') no-repeat center center/cover;
+			background-attachment: fixed;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Arial', sans-serif;
+            color: white;
+            text-align: center;
+			min-height: 100vh;
+        }
+
+        .logo {
+            width: 300px;
+            height: auto;
+        }
+        
+        .tabs {
+            margin: 25px 0;
+            font-size: 1.2rem;
+        }
+
+        .tabs span {
+            margin: 0 15px;
+            cursor: pointer;
+            opacity: 0.7;
+            transition: opacity 0.3s;
+        }
+        
+        .tabs span:hover {
+            opacity: 1;
+        }
+
+        .content {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            border-radius: 10px;
+            width: 50%;
+            max-width: 600px;
+            backdrop-filter: blur(5px);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+			margin: 0 auto;
+			text-align: justify;
+        }
+
+        .content.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <h1><img src="logo.png" alt="로고" class="logo" onclick="location.href='main.html'"></h1>
+
+    <div class="tabs">
+        <span onclick="location.href='fic.html'">Fiction</span>
+ · <span onclick="location.href='pic.html'">Picture</span>
+ · <span onclick="location.href='vid.html'">Video</span>
+
+    </div>
+    <div class="content" id="content">
+        <p>
+		겨울을 닮은 것들을<br>
+		차곡차곡 쌓아두다가 너는 또 웃는다<br><br>
+		온통 겨울이야 웃기지?<br>
+		미안 나는 그 말을 꺼내기도 전부터 웃고 있었단다<br><br>
+		웃을때 함빡 들어가는 보조개가 있는 사람<br>
+		나는 그 보조개를 한 번 더 보려고<br>
+		내가 아는 모든 겨울을 여기 적는다<br><br>
+		알고 있는 단어가 모두 사라질 때까지<br>
+		겨울이 끝나지 않으면 좋으련만
+</p>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.getElementById("content").classList.add("show");
+        });
+    </script>
+</body>
+</html>

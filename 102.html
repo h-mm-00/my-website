@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>세잎클로버</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: url('bg2.png') no-repeat center center/cover;
+			background-attachment: fixed;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Arial', sans-serif;
+            color: white;
+            text-align: center;
+			min-height: 100vh;
+        }
+
+        .logo {
+            width: 300px;
+            height: auto;
+        }
+        
+        .tabs {
+            margin: 25px 0;
+            font-size: 1.2rem;
+        }
+
+        .tabs span {
+            margin: 0 15px;
+            cursor: pointer;
+            opacity: 0.7;
+            transition: opacity 0.3s;
+        }
+        
+        .tabs span:hover {
+            opacity: 1;
+        }
+
+        .content {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            border-radius: 10px;
+            width: 50%;
+            max-width: 600px;
+            backdrop-filter: blur(5px);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+			margin: 0 auto;
+			text-align: justify;
+        }
+
+        .content.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <h1><img src="logo.png" alt="로고" class="logo" onclick="location.href='main.html'"></h1>
+
+    <div class="tabs">
+        <span onclick="location.href='fic.html'">Fiction</span>
+ · <span onclick="location.href='pic.html'">Picture</span>
+ · <span onclick="location.href='vid.html'">Video</span>
+
+    </div>
+    <div class="content" id="content">
+        <p>
+		슬아, 여덟 시가 되어 불이 꺼져도 벽에 걸려 춤을 추자. 초록의 화상이 팔뚝으로 번져도 너는 울면서 사랑하는 것들을 끌어 안는구나 사랑할 이유가 한 개도 없는 것들조차.<br><br>
+		세상이 끝날 것 같다고 생각하는 순간에도 지긋지긋하게 악에 받쳐 올라가며 삶이란 끝을 들쳐 업는구나. <br><br>
+		눈이 내려 축복을 기도하기 위해 행복하지 말아야 할 것 같은 하루. 오랜 시간 졸인 마음을 급하게 꺼내 먹어야 할까봐 몸에 불을 붙이는 밤.<br><br>
+		위로처럼 토닥토닥 쌓여서 어두운 낮과 눈이 부시게 사라지는 밤에, 살아가다-를 사랑하다-로 슬아. 네 혈관에는 뜨거움이 흐르는데 녹지 않는 눈이 알알이 박혀있어서<br><br>
+		한겨울 고요한 밤 숲처럼 살랑거리고 눈처럼 내리고
+</p>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.getElementById("content").classList.add("show");
+        });
+    </script>
+</body>
+</html>

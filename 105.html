@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>세잎클로버</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: url('bg2.png') no-repeat center center/cover;
+			background-attachment: fixed;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Arial', sans-serif;
+            color: white;
+            text-align: center;
+			min-height: 100vh;
+        }
+
+        .logo {
+            width: 300px;
+            height: auto;
+        }
+        
+        .tabs {
+            margin: 25px 0;
+            font-size: 1.2rem;
+        }
+
+        .tabs span {
+            margin: 0 15px;
+            cursor: pointer;
+            opacity: 0.7;
+            transition: opacity 0.3s;
+        }
+        
+        .tabs span:hover {
+            opacity: 1;
+        }
+
+        .content {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            border-radius: 10px;
+            width: 50%;
+            max-width: 600px;
+            backdrop-filter: blur(5px);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+			margin: 0 auto;
+			text-align: justify;
+        }
+
+        .content.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <h1><img src="logo.png" alt="로고" class="logo" onclick="location.href='main.html'"></h1>
+
+    <div class="tabs">
+        <span onclick="location.href='fic.html'">Fiction</span>
+ · <span onclick="location.href='pic.html'">Picture</span>
+ · <span onclick="location.href='vid.html'">Video</span>
+
+    </div>
+    <div class="content" id="content">
+        <p>
+		파도가 출렁이던 오후 네가 밀려들어왔어<br>
+		그걸 깨닫는 순간 너에게 잠겨버렸지<br><br>
+		무서웠어<br>
+		그늘에 감추고 매일 어루만지던 까슬한 배<br>
+		구석구석 네가 차오를까봐<br>
+		그러고선 네가 떠나버리면<br>
+		눈부신 햇볕이 세상에 나를 비출까봐<br><br>
+		그런데 맑게 출렁이는 너의 눈빛은<br>
+		햇살이 비추는 날이면 나를 투명히 담아내고 무섭도록 깊은 밤에는 별빛을 더 가까이 가져다 줬어<br><br>
+		이제 내 배에 낀 이끼의 보드라운 흔들림도<br>
+		벌겋게 녹슨 무릎 아래를 노니는 물고기도 사랑스럽다<br>
+		네가 나를 담고, 내가 너의 색으로 물드는 오후도
+</p>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.getElementById("content").classList.add("show");
+        });
+    </script>
+</body>
+</html>
