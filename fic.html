@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fiction 목록</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: url('bg2.png') no-repeat center center/cover;
+            text-align: center;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            margin-top: 50px;
+            opacity: 0;
+            transition: opacity 2s ease-in-out;
+        }
+
+        .show {
+            opacity: 1;
+        }
+
+        .tabs {
+            margin-top: 20px;
+            font-size: 1.5rem;
+        }
+
+        .tabs span {
+            margin: 0 15px;
+            cursor: pointer;
+            opacity: 0.7;
+            transition: opacity 0.3s;
+        }
+
+        .tabs span:hover {
+            opacity: 1;
+        }
+
+        .content-list {
+            margin-top: 30px;
+        }
+
+        .content-list button {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            padding: 10px 20px;
+            margin: 5px;
+            color: white;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .content-list button:hover {
+            background: rgba(255, 255, 255, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <img src="logo.png" alt="로고" class="logo">
+    <div class="tabs">
+        <span onclick="location.href='fic.html'">Fiction</span> · 
+        <span onclick="location.href='pic.html'">Picture</span> · 
+        <span onclick="location.href='vid.html'">Video</span>
+    </div>
+    <div class="container" id="content-container">
+        <div class="content-list" id="content-list"></div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.getElementById("content-container").classList.add("show");
+
+            fetch("contents.json")
+                .then(response => response.json())
+                .then(data => {
+                    const contentList = document.getElementById("content-list");
+                    data.forEach((item, index) => {
+                        const button = document.createElement("button");
+                        button.textContent = item.title;
+                        button.onclick = function() {
+                            window.location.href = `${item.page}`;
+                        };
+                        contentList.appendChild(button);
+                    });
+                })
+                .catch(error => console.error("데이터 로드 실패:", error));
+        });
+    </script>
+</body>
+</html>
